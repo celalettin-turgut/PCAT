@@ -51,6 +51,16 @@ app.post("/photos", async (req, res) => {
   res.redirect("/");
 });
 
+app.get("/photos/:id", async (req, res) => {
+  console.log(req.params.id);
+  const id = req.params.id;
+  const photo = await Photo.findById(id);
+
+  res.render("photo", {
+    photo,
+  });
+});
+
 app.listen(port, () => {
   console.log(`Sunucu ${port} portunda baslatildi`);
 });
