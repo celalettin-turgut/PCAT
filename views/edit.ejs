@@ -56,7 +56,7 @@ https://templatemo.com/tm-552-video-catalog
               <div class="col-12">
                 <div class="mx-auto tm-about-text-container px-3">
                   <h2 class="tm-page-title mb-4 tm-text-primary">
-                    Add new photo
+                    Edit the photo
                   </h2>
                   <p>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -74,7 +74,7 @@ https://templatemo.com/tm-552-video-catalog
                   <form
                     encType="multipart/form-data"
                     id="contact-form"
-                    action="/photos"
+                    action="/photos/edit/<%= photo._id %>?_method=PUT"
                     method="POST"
                     class="tm-contact-form"
                   >
@@ -83,7 +83,7 @@ https://templatemo.com/tm-552-video-catalog
                         type="text"
                         name="title"
                         class="form-control rounded-0"
-                        placeholder="Photo Title"
+                        value="<%= photo.title %>"
                         required
                       />
                     </div>
@@ -93,17 +93,10 @@ https://templatemo.com/tm-552-video-catalog
                         rows="8"
                         name="description"
                         class="form-control rounded-0"
-                        placeholder="Photo Description"
                         required
-                      ></textarea>
-                    </div>
-
-                    <div class="form-group">
-                      <input
-                        type="file"
-                        name="image"
-                        class="form-control-file rounded-0"
-                      />
+                      >
+<%= photo.description %>
+                      </textarea>
                     </div>
 
                     <div class="form-group mb-0">
@@ -118,7 +111,7 @@ https://templatemo.com/tm-552-video-catalog
                           tm-btn-animate tm-btn-submit tm-icon-submit
                         "
                       >
-                        <span>Submit</span>
+                        <span>Save Changes</span>
                       </button>
                     </div>
                   </form>

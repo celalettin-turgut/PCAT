@@ -54,7 +54,7 @@ https://templatemo.com/tm-552-video-catalog
             <div class="row mb-5 pb-4">
               <div class="col-12">
                 <img
-                  src="img/video-detail-1.jpg"
+                  src="<%= photo.image %>"
                   alt="Image"
                   class="img-fluid tm-catalog-item-img"
                 />
@@ -72,7 +72,8 @@ https://templatemo.com/tm-552-video-catalog
                 <!-- Share box -->
                 <div class="tm-bg-gray tm-share-box">
                   <div class="text-center">
-                    <button
+                    <a
+                      href="/photos/edit/<%= photo._id %>"
                       class="
                         btn btn-primary
                         p-0
@@ -81,10 +82,11 @@ https://templatemo.com/tm-552-video-catalog
                       "
                     >
                       <span>Update Details</span>
-                    </button>
+                    </a>
                   </div>
                   <div class="text-center">
-                    <button
+                    <a
+                      href="/photos/delete/<%= photo._id%>?_method=DELETE"
                       class="
                         btn btn-danger
                         p-0
@@ -92,7 +94,7 @@ https://templatemo.com/tm-552-video-catalog
                       "
                     >
                       <span>Delete Photo</span>
-                    </button>
+                    </a>
                   </div>
                 </div>
               </div>
